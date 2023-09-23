@@ -16,6 +16,7 @@
 class Node {
     constructor(id) {
         this.id = id;
+        // a node LABEL would go here when I need it
         this.rules = [];
         this.exits = [];
     }
