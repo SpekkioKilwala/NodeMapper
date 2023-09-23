@@ -22,16 +22,14 @@ class Node {
 }
 
 const nodeContainer = {
-    // I don't know what this thing actually does except be a container for all the nodes.
     // The nodes are all just members of this, because that means that you can get a direct
     // reference to any node if you just know the name, which is important.
-    // It CAN be responsible for creating the links and setting the rules,
-    // but I'm pretty sure that makes it the "god-object" and that's to be avoided.
+    // (otherwise I might have to use something like eval which is definitely wrong)
+    add: function(node) {
+        this[node.id] = node;
+    }
 }
 
-// This could all be hardcoded inside the nodeContainer when I create it,
-// but I assume that I want to be reading all this from a JSON file later
-// or something.
-nodeContainer["home"] = new Node("home");
-nodeContainer["field"] = new Node("field");
-nodeContainer["castle"] = new Node("castle");
+nodeContainer.add(new Node("home"));
+nodeContainer.add(new Node("field"));
+nodeContainer.add(new Node("castle"));
