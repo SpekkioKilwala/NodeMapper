@@ -12,3 +12,21 @@
 //  A list of things that that function relies on
 // solutions HAVE....
 //  I dunno yet
+
+class Node {
+    constructor(id) {
+        this.id = id;
+        this.rules = [];
+        this.exits = [];
+    }
+}
+
+const nodeMap = {
+    nodes: [],
+}
+
+// add "home", "field", and "castle"
+
+nodeMap.nodes.push(new Node("home"));
+nodeMap.nodes.push(new Node("field"));
+nodeMap.nodes.push(new Node("castle"));
